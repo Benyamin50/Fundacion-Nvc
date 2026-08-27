@@ -4,14 +4,15 @@ dist/
 build/
 *.log
 .DS_Store
-.env
-.env.local
 
 # Archivos de sistema
 Thumbs.db
 *.zip
 
 # IDE
-.vscode/
 .idea/
 
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+config.bat
