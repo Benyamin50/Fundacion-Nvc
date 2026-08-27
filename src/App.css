@@ -1,0 +1,135 @@
+/* =========================================
+   1. RESET Y VARIABLES BASE
+   ========================================= */
+:root {
+  /* Colores extraídos de las capturas */
+  --color-yellow-btn: #f4c244;  /* Botón POSTULA */
+  --color-blue-news: #4a7c94;   /* Noticias */
+  --color-red: #d15e51;         /* Salud / +8000 */
+  --color-purple: #a67fb0;      /* Emprendimiento / Pasos / 78% */
+  --color-green: #89a85d;       /* Deporte */
+  --color-blue-dark: #446c87;   /* Cultura / 76% */
+  --color-yellow-alt: #dfb94d;  /* Social / $10.750 */
+  --color-text-dark: #333333;
+  --color-text-light: #ffffff;
+  
+  /* Tipografías (Sugeridas basadas en el diseño) */
+  --font-headings: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  background-color: var(--color-text-light);
+  overflow-x: hidden;
+}
+
+/* =========================================
+   2. HEADER Y NAVEGACIÓN (Captura ...190223.jpg)
+   ========================================= */
+.header {
+  position: absolute; /* Para que flote sobre la imagen del Hero */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.header-logo img {
+  height: 50px; /* Ajusta según el tamaño de tu logo exportado */
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.header-nav a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.header-nav a:hover {
+  opacity: 0.8;
+}
+
+/* El botón POSTULA tiene un borde estilo "brochazo" */
+.btn-postula {
+  background-color: var(--color-yellow-btn);
+  color: var(--color-text-dark);
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  /* Simula el borde orgánico/dibujado */
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-postula:hover {
+  transform: scale(1.05);
+}
+
+/* =========================================
+   3. HERO SECTION (Captura ...190223.jpg)
+   ========================================= */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* Aquí debes poner la ruta de tu imagen de fondo */
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('/ruta-a-tu-imagen.jpg'); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end; /* Alinea el texto hacia abajo */
+  padding: 80px 60px;
+}
+
+.hero-title {
+  font-family: var(--font-headings);
+  color: var(--color-text-light);
+  font-size: 4.5rem;
+  line-height: 1.1;
+  font-weight: 600;
+  max-width: 600px;
+}
+
+.hero-title-highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+/* El subrayado azul debajo de "te apoyamos" */
+.hero-title-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: -5px;
+  width: 105%;
+  height: 12px;
+  background-color: #6da2c4; /* Tono de azul claro del subrayado */
+  z-index: -1;
+  border-radius: 10px;
+  transform: rotate(-2deg); /* Da el efecto de estar inclinado como en la foto */
+}

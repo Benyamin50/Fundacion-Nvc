@@ -1,0 +1,145 @@
+/* =========================================
+   ARTICLE DETAIL - DISEÑO EDITORIAL PRÉMIUM
+   ========================================= */
+
+.article-full-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.article-not-found {
+  padding: 200px 20px;
+  text-align: center;
+  font-family: 'Askawa', sans-serif !important;
+  color: #155263;
+}
+
+/* =========================================
+   HERO DEL ARTÍCULO (IMAGEN GRANDE)
+   ========================================= */
+.article-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 60px;
+}
+
+.article-hero-overlay {
+  position: absolute;
+  inset: 0;
+  /* Degradado mucho más oscuro para asegurar que el blanco resalte siempre */
+  background: linear-gradient(to top, rgba(10, 42, 53, 0.98) 0%, rgba(10, 42, 53, 0.6) 50%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.article-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Título de la etiqueta (Salud, Social, etc) */
+.article-category-tag {
+  display: inline-block;
+  font-family: 'SawithMono', monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 8px 20px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  color: #ffffff !important; /* Blanco forzado */
+}
+
+/* Título principal de la noticia */
+.article-main-title {
+  font-family: 'Askawa', sans-serif !important;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+  color: #ffffff !important; /* Blanco forzado */
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+}
+
+/* =========================================
+   CUERPO DEL ARTÍCULO
+   ========================================= */
+.article-body-section {
+  padding: 80px 0;
+}
+
+.article-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.article-text {
+  font-family: 'SawithMono', monospace;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #4A5568;
+}
+
+.article-lead {
+  font-size: 1.4rem;
+  color: #155263;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(136, 167, 183, 0.2);
+}
+
+.article-text p {
+  margin-bottom: 25px;
+}
+
+/* =========================================
+   BOTONES AL FINAL
+   ========================================= */
+.article-actions {
+  display: flex;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(136, 167, 183, 0.2);
+}
+
+.btn-article-outline,
+.btn-article-back {
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-family: 'SawithMono', monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-article-outline {
+  background: transparent;
+  color: #155263;
+  border: 2px solid #155263;
+}
+
+.btn-article-outline:hover {
+  background: rgba(21, 82, 99, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 820px) {
+  .article-main-title { font-size: 2.2rem; }
+  .article-container { padding: 0 20px; }
+}

@@ -1,0 +1,555 @@
+/* ============================================
+   VARIABLES GLOBALES DEL NAVBAR
+   ============================================ */
+:root {
+  --nav-blue-dark: #155263;
+  --nav-blue-light: #88A7B7;
+}
+
+/* ============================================
+   NAVBAR - ESTILOS BASE (FONDO OSCURO CON OPACIDAD)
+   ============================================ */
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
+  height: 90px; /* 🔥 CAMBIADO A 90px */
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.navbar-container {
+  width: 100%;
+  height: 100%;
+  padding: 0 82px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* ============================================
+   SCROLL - FONDO BLANCO
+   ============================================ */
+.navbar-header.scrolled {
+  height: 80px; /* 🔥 CAMBIADO A 80px */
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(21, 82, 99, 0.08);
+  border-bottom: 1px solid rgba(21, 82, 99, 0.1);
+}
+
+/* ============================================
+   LOGO
+   ============================================ */
+.navbar-left-group {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-logo a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-logo img {
+  height: 80px; /* 🔥 CAMBIADO A 80px */
+  width: auto;
+  display: block;
+  transition: height 0.3s ease, opacity 0.3s ease;
+  object-fit: contain;
+}
+
+.navbar-header.scrolled .navbar-logo img {
+  height: 70px; /* 🔥 CAMBIADO A 70px */
+}
+
+/* ============================================
+   MENÚ PRINCIPAL - LETRAS BLANCAS AL INICIO
+   ============================================ */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-left: 20px;
+  height: 100%;
+}
+
+.navbar-links > a,
+.navbar-links .dropdown-toggle {
+  font-family: 'SawithMono', monospace !important;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px; /* 🔥 CAMBIADO A 13px */
+  font-weight: 300 !important;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-links > a:hover,
+.navbar-links .dropdown-toggle:hover {
+  opacity: 0.7;
+}
+
+/* ============================================
+   MENÚ PRINCIPAL - LETRAS NEGRAS AL SCROLL
+   ============================================ */
+.navbar-header.scrolled .navbar-links > a,
+.navbar-header.scrolled .navbar-links .dropdown-toggle {
+  color: #000000;
+}
+
+.navbar-header.scrolled .navbar-links > a:hover,
+.navbar-header.scrolled .navbar-links .dropdown-toggle:hover {
+  color: var(--nav-blue-light);
+  opacity: 1;
+}
+
+/* ============================================
+   DROPDOWN
+   ============================================ */
+.dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dropdown-arrow {
+  font-size: 11px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  margin-left: 2px;
+}
+
+.dropdown.open .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  background-color: #ffffff;
+  min-width: 200px;
+  box-shadow: 0 12px 40px rgba(21, 82, 99, 0.12);
+  border-radius: 12px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(21, 82, 99, 0.05);
+}
+
+.dropdown-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  color: #000000 !important;
+  padding: 12px 28px;
+  font-size: 13px; /* 🔥 CAMBIADO A 13px */
+  font-family: 'SawithMono', monospace !important;
+  text-transform: none !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.3px !important;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+}
+
+.dropdown-menu a:hover {
+  background-color: #F7FAFC;
+  color: var(--nav-blue-light) !important;
+  border-left-color: var(--nav-blue-light);
+  padding-left: 32px;
+}
+
+/* ============================================
+   GRUPO DERECHA
+   ============================================ */
+.navbar-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 85px;
+  height: 75px; /* 🔥 CAMBIADO A 80px */
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+  padding-left: 85px;
+  transition: border-color 0.3s ease;
+}
+
+.navbar-header.scrolled .navbar-right-actions {
+  border-left-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ===== BOTÓN DONA AQUÍ ===== */
+.btn-postula {
+  background-color: var(--nav-blue-dark) !important;
+  color: #ffffff !important;
+  padding: 10px 22px !important; /* 🔥 AJUSTADO */
+  font-size: 13px !important; /* 🔥 CAMBIADO A 13px */
+  font-weight: 600 !important;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  transition: transform 0.25s ease, background-color 0.25s ease !important;
+  font-family: 'SawithMono', monospace !important;
+  letter-spacing: 1px;
+  gap: 8px;
+  border: 1px solid transparent;
+}
+
+.btn-postula:hover {
+  transform: scale(1.05);
+  background-color: var(--nav-blue-light) !important;
+  opacity: 1 !important;
+}
+
+.btn-postula svg {
+  width: 16px; /* 🔥 AJUSTADO */
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   BOTÓN HAMBURGUESA (SOLO MÓVIL)
+   ============================================ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1002;
+  margin-left: 20px;
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.navbar-header.scrolled .hamburger span {
+  background-color: #000000 !important;
+}
+
+.hamburger.active span {
+  background-color: #000000 !important;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* ============================================
+   OVERLAY
+   ============================================ */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(21, 82, 99, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ============================================
+   RESPONSIVE - TABLET
+   ============================================ */
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 0 40px;
+  }
+
+  .navbar-links {
+    margin-left: 25px;
+    gap: 20px;
+  }
+
+  .navbar-right-actions {
+    padding-left: 35px;
+    gap: 35px;
+  }
+
+  .navbar-links > a,
+  .navbar-links .dropdown-toggle {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  .btn-postula {
+    font-size: 13px !important;
+    padding: 10px 22px !important;
+  }
+
+  .navbar-logo img {
+    height: 80px;
+  }
+
+  .navbar-header.scrolled .navbar-logo img {
+    height: 70px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE - MÓVIL
+   ============================================ */
+@media (max-width: 820px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-header {
+    height: 80px;
+  }
+
+  .navbar-header.scrolled {
+    height: 70px;
+  }
+
+  .navbar-container {
+    padding: 0 20px;
+  }
+
+  .navbar-logo img {
+    height: 70px;
+  }
+
+  .navbar-header.scrolled .navbar-logo img {
+    height: 60px;
+  }
+
+  .navbar-right-actions {
+    border-left: none;
+    padding-left: 0;
+    gap: 0;
+    height: auto;
+  }
+
+  .navbar-right-actions .btn-postula {
+    display: none !important;
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: #ffffff !important;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 80px 28px 30px;
+    margin: 0;
+    transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 4px 0 20px rgba(21, 82, 99, 0.1);
+    z-index: 1001;
+    overflow-y: auto;
+  }
+
+  .navbar-links.open {
+    left: 0;
+  }
+
+  .navbar-links > a,
+  .navbar-links .dropdown-toggle {
+    color: #000000 !important;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    text-align: left;
+    font-weight: 300 !important;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    width: 100%;
+    height: auto;
+  }
+
+  .dropdown {
+    width: 100%;
+    text-align: left;
+    height: auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .dropdown-toggle {
+    width: 100%;
+    justify-content: space-between;
+    padding: 12px 0 !important;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    display: none;
+    border: none;
+    align-items: flex-start;
+  }
+
+  .dropdown-menu.open {
+    display: flex;
+    padding: 4px 0 12px 16px;
+  }
+
+  .dropdown-menu a {
+    color: #000000 !important;
+    padding: 10px 0;
+    font-size: 14px;
+    text-align: left;
+    border-left: none;
+    font-weight: 300 !important;
+  }
+
+  .dropdown-menu a:hover {
+    background: transparent;
+    color: var(--nav-blue-light) !important;
+    padding-left: 8px;
+    border-left: 3px solid var(--nav-blue-light);
+  }
+
+  .dropdown-arrow {
+    font-size: 11px;
+  }
+
+  .navbar-links .mobile-donate {
+    display: block !important;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .navbar-links .mobile-donate .btn-postula {
+    display: inline-flex !important;
+    width: 100%;
+    justify-content: center;
+    padding: 14px !important;
+    font-size: 14px !important;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px !important;
+  }
+}
+
+/* ============================================
+   RESPONSIVE - MÓVIL PEQUEÑO
+   ============================================ */
+@media (max-width: 480px) {
+  .navbar-header {
+    height: 70px;
+  }
+
+  .navbar-header.scrolled {
+    height: 60px;
+  }
+
+  .navbar-container {
+    padding: 0 14px;
+  }
+
+  .navbar-logo img {
+    height: 60px;
+  }
+
+  .navbar-header.scrolled .navbar-logo img {
+    height: 50px;
+  }
+
+  .navbar-links {
+    width: 88%;
+    max-width: 280px;
+    padding: 70px 18px 20px;
+  }
+
+  .navbar-links > a,
+  .navbar-links .dropdown-toggle {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .hamburger span {
+    width: 24px;
+    height: 2.5px;
+  }
+
+  .btn-postula {
+    font-size: 12px !important;
+    padding: 10px 18px !important;
+  }
+}
+
+/* ============================================
+   CLASE PARA MÓVIL
+   ============================================ */
+.navbar-links .mobile-donate {
+  display: none;
+}
+
+@media (max-width: 820px) {
+  .navbar-links .mobile-donate {
+    display: block !important;
+  }
+}

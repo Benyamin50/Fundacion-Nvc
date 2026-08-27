@@ -1,0 +1,258 @@
+/* =========================================
+   SUPPORT AREAS - DISEÑO PRÉMIUM MODERNO
+   ========================================= */
+
+.support-areas-full-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-light);
+}
+
+.support-areas-page {
+  flex: 1;
+  width: 100%;
+}
+
+/* Contenedor alineado milimétricamente con el Navbar (82px) */
+.support-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 82px;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   HERO SUPPORT AREAS
+   ========================================= */
+.support-hero {
+  position: relative;
+  padding: 150px 0 90px 0;
+  background: linear-gradient(135deg, #155263 0%, #0a2a35 50%, #155263 100%);
+  overflow: hidden;
+  text-align: center;
+}
+
+.support-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(136, 167, 183, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.support-hero::after {
+  content: '✦';
+  position: absolute;
+  bottom: -40px;
+  right: 8%;
+  font-size: 18rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.02);
+  z-index: 0;
+  font-family: 'Askawa', sans-serif;
+}
+
+.support-badge {
+  display: inline-block;
+  font-family: 'SawithMono', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #88A7B7;
+  background: rgba(136, 167, 183, 0.12);
+  padding: 8px 22px;
+  border-radius: 50px;
+  border: 1px solid rgba(136, 167, 183, 0.15);
+  margin-bottom: 25px;
+}
+
+.support-hero h1 {
+  font-family: 'Askawa', sans-serif !important;
+  font-size: 3.8rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin: 0 0 15px 0;
+  letter-spacing: -0.5px;
+}
+
+.support-hero h1 .highlight {
+  color: #88A7B7;
+  font-weight: 600;
+}
+
+.support-hero p {
+  font-family: 'SawithMono', monospace;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* =========================================
+   CONTENIDO DE ÁREAS (GRID DE TARJETAS)
+   ========================================= */
+.support-content {
+  padding: 70px 0 120px 0;
+  background: #F7FAFC;
+  position: relative;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  width: 100%;
+}
+
+.support-card {
+  background: #ffffff;
+  border-radius: 26px;
+  border: 1px solid rgba(136, 167, 183, 0.14);
+  box-shadow: 0 16px 40px rgba(21, 82, 99, 0.06);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.support-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(136, 167, 183, 0.4);
+  box-shadow: 0 25px 60px rgba(21, 82, 99, 0.14);
+}
+
+.support-img-box {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.support-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.support-card:hover .support-img-box img {
+  transform: scale(1.06);
+}
+
+.support-tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-family: 'SawithMono', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.support-card-body {
+  padding: 35px 35px 20px 35px;
+}
+
+.support-card-body h2 {
+  font-family: 'Askawa', sans-serif !important;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #155263;
+  margin: 0 0 14px 0;
+  line-height: 1.3;
+}
+
+.support-desc {
+  font-family: 'SawithMono', monospace;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #718096;
+  margin: 0 0 15px 0;
+}
+
+.support-detail {
+  font-family: 'SawithMono', monospace;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #a0aec0;
+  margin: 0;
+}
+
+.support-card-footer {
+  padding: 0 35px 35px 35px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-support {
+  background: rgba(21, 82, 99, 0.08);
+  border: none;
+  display: inline-block;
+  font-family: 'SawithMono', monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #155263;
+  cursor: pointer;
+  padding: 14px 28px;
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.btn-support:hover {
+  background: #155263;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(21, 82, 99, 0.25);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 1024px) {
+  .support-container {
+    padding: 0 40px;
+  }
+  .support-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 820px) {
+  .support-container {
+    padding: 0 20px;
+  }
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .support-container {
+    padding: 0 14px;
+  }
+  .support-card-body {
+    padding: 24px 24px 16px 24px;
+  }
+  .support-card-footer {
+    padding: 0 24px 24px 24px;
+  }
+}

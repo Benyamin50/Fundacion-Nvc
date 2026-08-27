@@ -1,0 +1,312 @@
+/* =========================================
+   FOOTER NVC - UI PODS COMPACTO Y ELEGANTE
+   ========================================= */
+
+.footer-section {
+  background: radial-gradient(circle at 50% 0%, #0c1c24 0%, #04080a 70%);
+  color: #94a3b8;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  padding: 70px 0 35px 0;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(136, 167, 183, 0.25);
+}
+
+.footer-glow-bg {
+  position: absolute;
+  top: -100px;
+  right: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(21, 82, 99, 0.25) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(40px);
+}
+
+/* Alineación exacta con Home / Navbar */
+.footer-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-left: 85px;
+  padding-right: 85px;
+  box-sizing: border-box;
+}
+
+/* GRID DE TARJETAS FLOTANTES (MÁS COMPACTO) */
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 40px;
+  align-items: stretch;
+}
+
+/* Tarjetas con padding ajustado para eliminar el exceso de espacio */
+.brand-col, .nav-col, .contact-col {
+  background: rgba(13, 27, 34, 0.65);
+  border: 1px solid rgba(136, 167, 183, 0.12);
+  border-radius: 16px;
+  padding: 25px 28px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-col:hover, .nav-col:hover, .contact-col:hover {
+  border-color: rgba(136, 167, 183, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(21, 82, 99, 0.2);
+}
+
+/* --- BRAND COL --- */
+.footer-logo-link {
+  display: inline-block;
+  text-decoration: none;
+  width: fit-content;
+  margin-bottom: 12px;
+}
+
+.footer-logo-img {
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(1.2);
+}
+
+.footer-brand-desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #94a3b8;
+  margin-bottom: 18px;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(21, 82, 99, 0.3);
+  border: 1px solid rgba(136, 167, 183, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #88A7B7;
+  transition: all 0.3s ease;
+}
+
+.social-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.social-btn:hover {
+  background: var(--blue-dark);
+  border-color: #88A7B7;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(21, 82, 99, 0.4);
+}
+
+/* --- TÍTULOS DE CADA TARJETA --- */
+.footer-col-title {
+  color: #ffffff;
+  font-family: 'SawithMono', monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-col-title::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: var(--blue-light);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--blue-light);
+}
+
+/* --- NAVEGACIÓN --- */
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-link {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-link::before {
+  content: '›';
+  color: var(--blue-light);
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.footer-link:hover::before {
+  transform: translateX(3px);
+}
+
+/* --- CONTACTO --- */
+.footer-clean-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-clean-contact li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #94a3b8;
+}
+
+.footer-clean-contact a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-clean-contact a:hover {
+  color: #ffffff;
+}
+
+.contact-svg {
+  width: 15px;
+  height: 15px;
+  color: var(--blue-light);
+  flex-shrink: 0;
+}
+
+/* --- DIVISOR --- */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(136, 167, 183, 0.15);
+  margin-bottom: 25px;
+}
+
+/* --- BARRA INFERIOR --- */
+.footer-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.footer-copy {
+  color: #64748b;
+  margin: 0;
+}
+
+.copy-brand {
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.footer-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(21, 82, 99, 0.2);
+  border: 1px solid rgba(136, 167, 183, 0.2);
+  padding: 6px 16px;
+  border-radius: 30px;
+  backdrop-filter: blur(5px);
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--blue-light);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--blue-light);
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(136, 167, 183, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 5px rgba(136, 167, 183, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(136, 167, 183, 0); }
+}
+
+.footer-tagline {
+  font-family: 'SawithMono', monospace;
+  font-size: 0.82rem;
+  color: #f1f5f9;
+  margin: 0;
+}
+
+.highlight-tag {
+  color: var(--blue-light);
+  font-weight: 600;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .footer-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .footer-bottom-bar {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .brand-col, .nav-col, .contact-col {
+    padding: 20px 18px;
+  }
+}
